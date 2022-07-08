@@ -10,6 +10,7 @@ Payment acquirers (credit cards, online payments)
    payment_acquirers/wire_transfer
    payment_acquirers/adyen
    payment_acquirers/alipay
+   payment_acquirers/aps
    payment_acquirers/authorize
    payment_acquirers/buckaroo
    payment_acquirers/flutterwave
@@ -71,6 +72,11 @@ Online payment acquirers
    * - :doc:`Alipay <payment_acquirers/alipay>`
      - Payment from the acquirer website
      -
+     -
+     -
+   * - :doc:`Amazon Payment Services <payment_acquirers/aps>`
+     - Payment from the acquirer website
+     - |V|
      -
      -
    * - :doc:`Authorize.Net <payment_acquirers/authorize>`
