@@ -7,8 +7,8 @@ United Arab Emirates
 Installation
 ============
 
-:ref:`Install <general/install>` the following modules to get all the features of the United Arab
-Emirates localization:
+According to your needs, :ref:`install <general/install>` the following modules to get all the
+features of the **United Arab Emirates** localization:
 
 .. list-table::
    :header-rows: 1
@@ -18,109 +18,209 @@ Emirates localization:
      - Description
    * - :guilabel:`U.A.E. - Accounting`
      - ``l10n_ae``
-     - Default :doc:`fiscal localization package <../overview/fiscal_localization_packages>`. Has all the accounts, taxes, and reports. [Install if you have Accounting]
+     - Default :doc:`fiscal localization package <../overview/fiscal_localization_packages>`.
+       Contains all accounts, taxes, and reports.
    * - :guilabel:`U.A.E. - Payroll`
      - ``l10n_ae_hr_payroll``
-     - Has all the rules, calculations, and salary structures. [Install if you don’t have Accounting module, but you have payroll]
+     - Contains all rules, calculations, and salary structures.
    * - :guilabel:`U.A.E. - Payroll with Accounting`
      - ``l10n_ae_hr_payroll_account``
-     - Has all the  rules, calculations, salary structures, and accounts linked to the rules. [Install if you have Accounting + Payroll]
+     - Contains all rules, calculations, salary structures, and accounts related to the rules.
    * - :guilabel:`U.A.E. - Point of Sale`
      - ``l10n_ae_pos``
-     - Has the UAE compliant POS receipt. [Install if you have POS]
+     - Contains the U.A.E-compliant PoS receipt.
 
-Next, go to :menuselection:`Accounting --> Configuration --> Settings`, and double check if the
+.. example::
+   If you only use the **Accounting** and **Point of Sale** apps, then only select these modules.
+
+.. image:: united_arab_emirates/uae-localization-modules.png
+   :align: center
+   :alt: Select the modules to install.
+
+Configuration (this part is to be changed into a seealso or something)
+======================================================================
+
+Go to :menuselection:`Accounting --> Configuration --> Settings`, and double-check if the
 package is set up in place.
 
 An updated set of accounts is installed within the package. A mix of services-retail applicable
 accounts, as well as legal/regulatory [VAT] accounts.
 
-Configure your company
-Go to the :menuselection:`Accounting --> Configuration --> Chart of Accounts` and have a look at the
-installed chart of accounts. Delete or check the deprecated checkbox in that account’s setup as you
-see fit. Finally, feel free to add, edit, or keep any of the accounts as per your needs.
+Configuration
+=============
 
 Chart of accounts
-U.A.E. - Accounting: Has all the accounts, taxes, and reports. [Install if you have Accounting]
+-----------------
 
-Remember to always keep at least one Receivable account and one Payable account.
-Finally, I would advise you to keep the accounts below, since they’re either used as intermediary accounts by Odoo or somewhere in the localization.
+Go to :menuselection:`Accounting --> Configuration --> Chart of Accounts` to view all default
+accounts available for your localization package. You can filter either by :guilabel:`code` using
+the numbers on the far left, or by clicking on :guilabel:`Group By` and selecting :guilabel:`Account
+Type`. From this menu, you can **activate, deactivate, or configure** specific accounts according to
+your needs.
 
+Make sure to always keep at least one **Receivable Account** and one **Payable Account** active.
+Additionally, we also advise to keep the accounts below active, as they are either used as
+transitory accounts by Odoo or are specific to the U.A.E localization package.
 
+.. list-table::
+   :header-rows: 1
 
-Currency Exchange Rates
-Currency exchange rates are updated automatically from the UAE Central Bank. The update interval is up to you. To configure this, go to settings and find it under the accounting section.
+   * - Code
+     - Account Name
+     - Type
+   * - 102011
+     - Accounts Receivable
+     - Receivable
+   * - 102012
+     - Accounts Receivable (PoS)
+     - Receivable
+   * - 201002
+     - Payables
+     - Payable
+   * - 101004
+     - Bank
+     - Bank and Cash
+   * - 105001
+     - Cash
+     - Bank and Cash
+   * - 100001
+     - Liquidity Transfer
+     - Current Assets
+   * - 101002
+     - Outstanding Receipts
+     - Current Assets
+   * - 101003
+     - Oustanding Payments
+     - Current Assets
+   * - 104041
+     - VAT Input
+     - Current Assets
+   * - 100103
+     - VAT Receivable
+     - Non-current Assets
+   * - 101001
+     - Bank Suspense Account
+     - Current Liabilities
+   * - 201017
+     - VAT Output
+     - Current Liabilities
+   * - 202001
+     - End of Service Provision
+     - Current Liabilities
+   * - 202003
+     - VAT Payable
+     - Non-current Liabilities
+   * - 999999
+     - Undistributed Profits/Losses
+     - Current Year Earnings
+   * - 400003
+     - Basic Salary
+     - Expenses
+   * - 400004
+     - Housing Allowance
+     - Expenses
+   * - 400005
+     - Transportation Allowance
+     - Expenses
+   * - 400008
+     - End of Service Indemnity
+     - Expenses
 
+Taxes and tax report
+---------------------
 
-
-Journals
-To set up your journals, go to Accounting → Configurations → Journals. You can edit/adjust the existing journals to be tailored for your needs. Also feel free to create new journals with the appropriate type (Sales, Purchase, Bank, Cash, miscellaneous) if needed.
-
-
-
-
-
-
-
-
-
-
-Taxes and Tax reports
-
-The tax report is up to date.
-Tax closing entries and adjustments are now ready to use.
-RCM (Reverse Charge Mechanism) is now supported more than ever.
 Taxes
-To view the taxes applicable to your localization, go to Accounting → Configurations → Taxes. Then, deactivate, archive, or delete the ones that are not applicable or out of your company’s scope.
+~~~~~
 
+To access your taxes, head to :menuselection:`Accounting --> Configuration --> Taxes`. From here,
+activate, deactivate, or :doc:`configure the taxes
+<../../../accounting/taxation/taxes/taxes>` relevant to your business by clicking on them. Remember
+to only set accounts on the **5%** tax group, as other groups do not need closing.
 
+.. tip::
+   Use the :guilabel:`Group By --> Tax Type` filter to group taxes by type and have a clear overview
+   of the different taxes.
 
-Go through the accounts set on your taxes, make sure the types of these accounts represent the nature of the tax type accordingly:
-
-
-Assign the correct fiscal position to your contacts, so taxes show up properly when you invoice/bill them:
-
-
-Make sure you are in developer mode and check your tax groups to see the tax closing entries:
-
-Remember to only set accounts on the 5% tax group, other groups do not need closing, then create some Invoices, Journal Entries, and Bills to test.
+.. image:: united_arab_emirates/uae-localization-taxes.png
+   :align: center
+   :alt: Preview of the U.A.E. localization package's taxes.
 
 Tax report
-Go to your tax report and try closing the period. The period you set on the settings page is the period used for closing.
+~~~~~~~~~~
+
+To create a tax report when closing your period, head to :menuselection:`Accounting --> Reporting
+--> Tax Report`. The closing period corresponds to the period configured in
+:menuselection:`Accounting --> Configuration --> Settings --> Taxes`, but you can always change it
+by clicking on the **calendar icon** and selecting the period you wish to close.
+
+Journals
+--------
+To configure your journals, go to :menuselection:`Accounting --> Configuration --> Journals`. You
+can modify the pre-configured journals according to your needs, or create new journals with 5
+possible types: **Sales, Purchase, Bank, Cash**, and **Miscellaneous**.
+
+Currency exchange rates
+-----------------------
+Currency exchange rates are automatically updated from the U.A.E Central Bank, but by default the
+interval is set to *manual*. If you wish to use the automated currency rate update, change the
+interval to your desired frequency under :menuselection:`Accounting --> Configuration --> Settings
+--> Currencies`.
+
+It is also possible to use web services other than the **U.A.E Central Bank**, such as **xe.com** or
+the **European Central Bank**. To do so, simply click on the drop-down menu of the
+:guilabel:`Service` field and select one of the services.
 
 .. _uae/payroll:
 
 Payroll
 =======
 
-Make sure to :ref:`install the modules you need <uae/installation>`. The guilabel:`U.A.E. - Payroll`
-module includes all the rules configured under the UAE Employee Payroll Structure in the Salary
-rules section as per the U.A.E rules and regulations.
+The :guilabel:`U.A.E. - Payroll` module includes all the rules configured under the
+:guilabel:`U.A.E. Employee Payroll Structure` in the **Salary Rules** section as per the U.A.E.
+rules and regulations. These rules are linked to their corresponding accounts found in the **Chart
+of Accounts**.
 
-.. image needed here, but I removed the : in the paragraph before as this image only illustrates.
+.. image:: united_arab_emirates/uae-localization-salary-rules.png
+   :align: center
+   :alt: The U.A.E. Employee Payroll Structure.
 
+Salary rules
+------------
 
-These rules are linked to the corresponding accounts that are on the Chart of accounts.
+To apply these rules to an employee's contract, go to :menuselection:`Payroll --> Contracts -->
+Contracts` and select the contract of the employee. In the :guilabel:`Salary Structure Type` field,
+select :guilabel:`UAE Employee`.
 
-To activate these rules to an employee, choose the correct salary structure type UAE Employee (which under it falls the salary structure UAE Employee Payroll Structure with all the salary rules ) on the employee’s contract:
+.. image:: united_arab_emirates/uae-localization-salary-structure.png
+   :align: center
+   :alt: Select the Salary Structure Type to apply to the contract.
 
 Leave deduction is calculated using a salary rule linked to the unpaid leave time off type, however, any other deduction or reimbursement is done manually using other inputs.
 
 Additionally, overtime is added manually through work entries and finally, Generated from the Salary Attachments Model are the Attachment of Salary, Assignment of Salary, and Child Support.
 
-Note:
-Uncheck the appear on payslip checkbox if you do not want the rule to show up in the printed payslip.
+.. tip::
+   If you do not wish a rule to appear on a paycheck. go to :menuselection:`Payroll -->
+   Configuration --> Structures`. Click on the **U.A.E. structure**, select the rule to hide, and
+   uncheck :guilabel:`Appears on Payslip`.
 
 Also if you go to any contract, under the Salary Information tab, you can find some fields that appear after installing the localization package such as Wage, Housing allowance, Transportation allowance, and Other allowances as well as the Number of days field which is how the end of service provision is calculated:
 
-:
+End of Service Provision
+------------------------
 
-End of Service Provision and End of Service
-The provision is defined as the total monthly allowance / 30 multiplied by the number of days set in the field Number of days shown above.
+The provision is defined as the total monthly allowance *divided* by 30, and then *multiplied* by
+the number of days set in the field :guilabel:`Number of days` at the bottom of a contract's form.
 
-This provision is then calculated via a salary rule that is associated with two accounts. These accounts are: the End Of Service Indemnity (Expense account) and the End of Service Provision (Non-current Liabilities account). The latter is then used to pay off the End of service amount by settling it with a Payables account.
+The provision is then calculated via a salary rule associated with two accounts: the **End Of
+Service Indemnity (Expense account)** and the **End of Service Provision (Non-current Liabilities
+account)**. The latter is used to pay off the **End of service** amount by settling it with the
+**Payables account**.
 
-Note:
-The End of service calculations are based on the Basic Salary only as to the United Arab Emirates HR laws. The start and end dates of the employee’s contracts trigger the calculations.
+.. note::
+   The **End of service** calculations are based on the Basic Salary only as to the United Arab Emirates HR laws. The start and end dates of the employee’s contracts trigger the calculations.
+
 Invoices
-Invoices generated while the U.A.E localization is installed can be in English, Arabic, or both. It also includes a line to display the VAT amount per line.
+--------
+Invoices generated with the U.A.E localization installed can be in English, Arabic, or both. It also
+includes a line to display the **VAT amount** per line.
